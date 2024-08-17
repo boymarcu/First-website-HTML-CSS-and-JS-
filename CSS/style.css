@@ -1,0 +1,228 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+    background-color: white;
+}
+
+#topo{
+    text-align: right;
+    background-color: black;
+    padding: 0 107px 0 0;
+}
+#topo span a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+}
+
+header{
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background-color:	#9400D3;
+    box-shadow: 0 4px 8px rgb(27, 27, 27);
+    padding: 1px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+}
+
+header img{
+    height: 85px;
+}
+
+#menu{
+    list-style: none;
+}
+#menu ul li{
+    position: relative;
+    float: left;
+    list-style: none;
+}
+#menu ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #DCDCDC;
+    display: block;
+}
+#menu ul li a:hover{
+    background: #DCDCDC;
+    color: #8A2BE2;
+}
+#menu ul ul{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1000;
+}
+#menu ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #A020F0;
+}
+#menu ul li ul li{
+    width: 100%;
+    border-top: 1px solid #DCDCDC;
+}
+#menu ul li ul li ul{
+    left: 165px;
+    top: 0;
+}
+#menu ul li:focus-within > ul,
+#menu ul li:hover > ul{
+    display: initial;
+}
+#nivel1{
+    display: none;
+}
+#nivel2{
+    display: none;
+}
+#menu-bar{
+    display: none;
+}
+header label{
+    font-size: 18px;
+    color: white;
+    font: bold;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:1002px){
+
+    #menu > ul > li > a {
+        display: block;
+        cursor: pointer;
+    }
+
+    #menu ul ul {
+        position: static;
+        display: none;
+        padding: 0;
+    }
+
+    #menu ul ul.show {
+        display: block;
+    }
+
+    #menu ul ul li {
+        border-top: 1px solid #A020F0;
+    }
+
+    #menu ul ul li a {
+        background: #A020F0;
+        padding-left: 30px;
+    }
+
+    #menu ul li ul li ul{
+        top: 0;
+        left: auto;
+        z-index: 1000;
+}
+    #card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pixi{
+        display: none;
+    }
+
+#menu-bar:checked ~ #menu{
+    display: initial;
+}
+}
+
+main{
+    margin-top:  20px;
+}
+
+
+#slider {
+    width: 100%;
+    height: auto;
+}
+#slider img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+a.nivo-prevNav,
+a.nivo-nextNav {
+    display: none;
+}
+
+a.nivo-control {
+    display:none;
+}
+
+
+#conteudo div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#card{
+    display: flex;
+    justify-content: space-between;
+}
+#card div{
+    margin: 0 10px;
+}
+
+#card a{
+    text-decoration: none;
+    color: black;
+}
+#card img{
+    width: 200px;
+    height: auto;
+}
+
+#card span{
+    display: block;
+    margin: 5px 60px;
+    text-decoration: underline;
+}
+
+
+#rodape{
+    top: 0; left: 0; right: 0;
+    background-color:	#9400D3;
+    box-shadow: 0 4px 8px rgb(27, 27, 27);
+    padding: 10px 90px;
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+#rodape a{
+    text-decoration: underline;
+    color: whitesmoke;
+}
+#final{
+    display: block;
+    padding-top: 25px;
+    text-align: center;
+    color: black;
+}
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px; padding-top: 100px;
+}
