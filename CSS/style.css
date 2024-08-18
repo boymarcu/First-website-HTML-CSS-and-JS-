@@ -27,111 +27,124 @@ header{
     top: 0; left: 0; right: 0;
     background-color:	#9400D3;
     box-shadow: 0 4px 8px rgb(27, 27, 27);
-    padding: 1px 90px;
+    padding: 0px 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 50;
+    z-index:1000;
 }
 
 header img{
     height: 85px;
 }
 
-#menu{
+header .menu ul{
     list-style: none;
-}
-#menu ul li{
-    position: relative;
-    float: left;
-    list-style: none;
-}
-#menu ul li a{
-    font-size: 18px;
-    padding: 20px;
-    color: #DCDCDC;
-    display: block;
-}
-#menu ul li a:hover{
-    background: #DCDCDC;
-    color: #8A2BE2;
-}
-#menu ul ul{
-    position: absolute;
-    left: 0;
-    top: 60px;
-    display: none;
     padding: 0;
     margin: 0;
-    list-style: none;
-    z-index: 1000;
+    display: flex;
 }
-#menu ul li ul{
+header .menu ul li{
+    position: relative;
+}
+header .menu ul li a{
+    font-size: 20px;
+    padding: 13px;
+    color: #DCDCDC;
+    display: block;
+    text-decoration: none;
+}
+
+header .menu ul li a:hover{
+    background: #8A2BE2;
+    color: #fff;
+}
+
+header .menu ul li ul{
     position: absolute;
     left: 0;
     width: 200px;
-    background: #A020F0;
+    background: #8A2BE2;
+    display: none;
+    padding: 0;
+    list-style: none;
 }
-#menu ul li ul li{
+
+header .menu ul li ul li{
     width: 100%;
-    border-top: 1px solid #DCDCDC;
+    border-top: 1px solid black;
 }
-#menu ul li ul li ul{
-    left: 165px;
+
+header .menu ul li ul li ul{
+    left: 200px;
     top: 0;
 }
-#menu ul li:focus-within > ul,
-#menu ul li:hover > ul{
+
+header .menu ul li:hover > ul{
     display: initial;
 }
-#nivel1{
-    display: none;
-}
-#nivel2{
-    display: none;
-}
+
 #menu-bar{
     display: none;
 }
+
 header label{
-    font-size: 18px;
-    color: white;
-    font: bold;
+    font-size: 20px;
+    color: whitesmoke;
     cursor: pointer;
     display: none;
 }
 
-@media(max-width:1002px){
+@media(max-width:991px){
 
-    #menu > ul > li > a {
-        display: block;
-        cursor: pointer;
+    header{
+        padding: 20px;
     }
 
-    #menu ul ul {
-        position: static;
+    header label{
+        display: block;
+    }
+
+    #menu{
         display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #9400D3;
+        border-top: 1px solid #000;
+        z-index: 1000;
+    }
+
+    header .menu ul{
+        display: block;
         padding: 0;
     }
 
-    #menu ul ul.show {
+    header .menu ul li{
+        float: none; 
+        width: 100%;
+    }
+
+    header .menu ul li ul{
+        position: static;
+        display: none;
+    }
+
+    header .menu ul li.active{
         display: block;
     }
 
-    #menu ul ul li {
-        border-top: 1px solid #A020F0;
+    header .menu ul li ul li{
+        background-color: #9400D3;
+    }
+    header .menu ul li ul li ul{
+        width: 100%;
+        left: 0;
     }
 
-    #menu ul ul li a {
-        background: #A020F0;
-        padding-left: 30px;
+    #menu-bar:checked ~ #menu {
+        display: block;
     }
 
-    #menu ul li ul li ul{
-        top: 0;
-        left: auto;
-        z-index: 1000;
-}
     #card{
         display: flex;
         flex-direction: column;
@@ -141,10 +154,6 @@ header label{
     #pixi{
         display: none;
     }
-
-#menu-bar:checked ~ #menu{
-    display: initial;
-}
 }
 
 main{
